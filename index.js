@@ -4,6 +4,7 @@
  *  */ 
 
 import {serve} from "https://deno.land/std@0.76.0/http/server.ts"; // Deno serve
+import {format} from "https://deno.land/x/date_fns/format/index.js"; // library 
 const url = 'http://hn.algolia.com/api/v1/search?query=javascript'; // Algolia API
 const s = serve({ port: 8000 }) // running on port 8000
 
@@ -12,7 +13,9 @@ for await (const req of s) {
     const stories = result.hits.map((hit) => ({
         title: hit.title,
         url: hit.url,
-        createAt: hit.created_at_i,
+        createAt: format(
+            new Date(hit.created_at_i * 1000), 'yyyy-MM-dd' 
+            ),
         author: hit.author,
         totalComment: hit.num_comments,
     }));
