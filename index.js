@@ -4,7 +4,7 @@
  *  */ 
 
 import {serve} from "https://deno.land/std@0.76.0/http/server.ts"; // Deno serve
-import {format} from "https://deno.land/x/date_fns/format/index.js"; // library 
+import {format} from "https://deno.land/x/date_fns/index.js"; // import library 
 const url = 'http://hn.algolia.com/api/v1/search?query=javascript'; // Algolia API
 const s = serve({ port: 8000 }) // running on port 8000
 
