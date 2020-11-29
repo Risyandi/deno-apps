@@ -35,6 +35,6 @@ Untuk menjalankan deno sebenarnya bisa menggunakan beberapa cara tapi yang seder
 
 Namun jika didalam baris kode kamu menggunakan sebuah library (pustaka), kamu bisa menambahkan perintah `--allow-read` berikut  
 
->  `deno run --allow-read --allow-net run index.js` 
+>  `deno run --allow-read --allow-net index.js` 
 
 file *index.js* bisa diubah dengan file utama yang akan kamu jalankan.
