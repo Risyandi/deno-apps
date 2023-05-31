@@ -9,9 +9,9 @@ const wasmCode = new Uint8Array([
 ]);
 
 const wasmModule = new WebAssembly.Module(wasmCode);
-console.log(wasmModule);
+console.log(wasmModule, 'log: wasmModule');
 const wasmInstance = new WebAssembly.Instance(wasmModule);
-console.log(wasmInstance);
+console.log(wasmInstance, 'log: wasmInstance');
 const main = wasmInstance.exports.main as CallableFunction
-console.log(main().toString());
+console.log(main().toString(), 'log: wasmInstanceMain');
 

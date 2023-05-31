@@ -1,4 +1,5 @@
 const url = Deno.args[0];
+console.log(`watch URL ${url}`);
 const res = await fetch(url);
 const body = new Uint8Array(await res.arrayBuffer());
 
