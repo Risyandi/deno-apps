@@ -1,12 +1,18 @@
+import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import Counter from "../islands/Counter.tsx";
 import Header from "../components/Header.tsx";
 
-export default function Home() {
+let checkObject = function (value: object) {
+  let lengthObject = Object.keys(value).length;
+  return lengthObject !== 0 ? true : false;
+}
+
+export default function Home(props: PageProps) {
   return (
     <>
       <Head>
-        <title>Fresh App</title>
+        <title>Fresh App | { checkObject(props.params) ? props.params.name : 'Homepage'}</title>
       </Head>
       <div class="p-4 mx-auto max-w-screen-md">
       <Header/>
